@@ -4,16 +4,27 @@
 
 package frc.robot;
 
-/**
- * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
- * constants. This class should not be used for any other purpose. All constants should be declared
- * globally (i.e. public static). Do not put anything functional in this class.
- *
- * <p>It is advised to statically import this class (or one of its inner classes) wherever the
- * constants are needed, to reduce verbosity.
- */
+import edu.wpi.first.wpilibj.Joystick;
+
+
 public final class Constants {
-  public static class OperatorConstants {
+
+  public static class InputConstants{
     public static final int kDriverControllerPort = 0;
+
+    public static final int kRaiseButton = 4; // Y Button
+    public static final int kLowerButton = 3; // A Button
+  }
+
+  public static class OperatorConstants {
+
+    //Declaring joytick ports || NOT MINE
+    public static int kJoystickPort = 1;
+
+    //Declaring Motor Speeds
+    public static double kElevatorSpeed = 0.10f;
+
+    //Declaring CAN IDs
+    public static int kElevatorID = 5;
   }
 }
