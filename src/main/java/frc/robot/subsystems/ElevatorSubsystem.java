@@ -20,13 +20,24 @@ public class ElevatorSubsystem extends SubsystemBase {
     elevatorMotor.set(speed);
   }
 
-  public void RaiseElevator(){
-    RunMotor(Constants.OperatorConstants.kElevatorSpeed);
+  public void RaiseElevator(boolean isFast){
+    //Up is the positive direction
+    if(isFast){
+      RunMotor(Constants.OperatorConstants.kElevatorUpSpeedFast);
+    }
+    else{
+      RunMotor(Constants.OperatorConstants.kElevatorUpSpeed);
+    }
   }
 
-  public void LowerElevator(){
-    //Here I am assuming that moving the elevator down is the motor's negative direction
-    RunMotor(-Constants.OperatorConstants.kElevatorSpeed);
+  public void LowerElevator(boolean isFast){
+    //Down is the negative direction
+    if(isFast){
+      RunMotor(-Constants.OperatorConstants.kElevatorDownSpeedFast);
+    }
+    else{
+      RunMotor(-Constants.OperatorConstants.kElevatorDownSpeed);
+    }
   }
 
   //This better work

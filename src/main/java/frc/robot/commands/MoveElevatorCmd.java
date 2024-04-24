@@ -9,10 +9,12 @@ public class MoveElevatorCmd extends Command{
 
     ElevatorSubsystem elevatorSubsystem;
     boolean isGoingUp;
+    boolean isFast;
 
-    public MoveElevatorCmd(ElevatorSubsystem elevatorSubsystem, boolean isGoingUp){
+    public MoveElevatorCmd(ElevatorSubsystem elevatorSubsystem, boolean isGoingUp, boolean isFast){
         this.elevatorSubsystem = elevatorSubsystem;
         this.isGoingUp = isGoingUp;
+        this.isFast = isFast;
 
         addRequirements(elevatorSubsystem);
     }
@@ -21,10 +23,10 @@ public class MoveElevatorCmd extends Command{
     @Override
     public void initialize(){
         if(isGoingUp){
-            elevatorSubsystem.RaiseElevator();
+            elevatorSubsystem.RaiseElevator(isFast);
         }
         else{
-            elevatorSubsystem.LowerElevator();
+            elevatorSubsystem.LowerElevator(isFast);
         }
     }
 

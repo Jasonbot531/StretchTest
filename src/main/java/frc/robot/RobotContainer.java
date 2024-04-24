@@ -57,8 +57,10 @@ public class RobotContainer {
    */
 
   private void configureBindings() {
-    //MINE:
-    new JoystickButton(joystickObject, InputConstants.kRaiseButton).whileTrue(new MoveElevatorCmd(elevatorSubsystem, true));
+    
+    //Articulate Elevator
+    new JoystickButton(joystickObject, InputConstants.kRaiseButton).whileTrue(new MoveElevatorCmd(elevatorSubsystem, true, joystickObject.getRawButton(Constants.InputConstants.kSpeedBoostButton)));
+    new JoystickButton(joystickObject, InputConstants.kLowerButton).whileTrue(new MoveElevatorCmd(elevatorSubsystem, false, joystickObject.getRawButton(Constants.InputConstants.kSpeedBoostButton)));
 
     /*
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`

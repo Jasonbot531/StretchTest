@@ -13,7 +13,9 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
 
     public static final int kRaiseButton = 4; // Y Button
-    public static final int kLowerButton = 3; // A Button
+    public static final int kLowerButton = 2; // A Button
+
+    public static final int kSpeedBoostButton = 8; //Right trigger
   }
 
   public static class OperatorConstants {
@@ -22,7 +24,11 @@ public final class Constants {
     public static int kJoystickPort = 1;
 
     //Declaring Motor Speeds
-    public static double kElevatorSpeed = 0.10f;
+    public static double kElevatorUpSpeed = 0.2f;
+    public static double kElevatorDownSpeed = 0.25f;
+
+    public static double kElevatorUpSpeedFast = 0.5f;
+    public static double kElevatorDownSpeedFast = 0.55f;
 
     //Declaring CAN IDs
     public static int kElevatorID = 5;
